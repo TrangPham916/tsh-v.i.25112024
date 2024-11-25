@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerology Calculator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://yt3.googleusercontent.com/TgmVhsTXB5JxMdN6ofQZc5kHFJ6wr3M_P2oXmxB6Shq4rfAooTNut3oR2L7cBKN53-VQdYwK=s900-c-k-c0x00ffffff-no-rj" alt="Numerology Logo" class="logo">
+        <h1>BẢNG TÍNH THẦN SỐ HỌC</h1>
+        <p>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name" placeholder="Nhập tên đầy đủ">
+        </p>
+        <p>
+            <label for="dob">Ngày sinh:</label>
+            <input type="text" id="dob" placeholder="ngày/tháng/năm">
+        </p>
+        <p id="dob-error" style="color: red;"></p>
+        <button id="calculateButton">Tra kết quả</button>
+        <table class="results">
+            <thead>
+                <tr>
+                    <th>Các chỉ số</th>
+                    <th>Giá trị</th>
+                </tr>
+            </thead>
+            <tbody id="resultsTableBody">
+                <!-- Rows will be dynamically added here -->
+            </tbody>
+        </table>
+        
+        <!-- Contact -->
+        <div class="contact-icons">
+            <!-- Liên kết Zalo -->
+            <a href="https://zalo.me/0334263131" target="_blank" title="Liên hệ Zalo">
+              <img src="/icons8-zalo.svg" alt="Zalo">
+            </a>
+            <!-- Liên kết Facebook -->
+            <a href="https://www.facebook.com/truongluan6813" target="_blank" title="Liên hệ Facebook">
+              <img src="/icons8-facebook.svg" alt="Facebook">
+            </a>
+            <!-- Liên kết Messenger -->
+            <a href="https://m.me/truongluan6813
+            " target="_blank" title="Liên hệ Messenger">
+              <img src="/icons8-messenger.svg" alt="Messenger">
+            </a>
+          </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
