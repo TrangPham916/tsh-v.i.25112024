@@ -201,7 +201,7 @@ function getLessonDebt(name) {
   const missingNumbers = [...allNumbers].filter(
     (num) => !numbersInName.has(num)
   );
-  return missingNumbers.length > 0 ? missingNumbers.join(', ') : 'None';
+  return missingNumbers.length > 0 ? missingNumbers.join(', ') : '';
 }
 
 // Function to get karmic debt number
@@ -356,7 +356,6 @@ function calculateNumerology() {
     ['Năng Lượng Thành Phần Nổi Trội', coreStrengthNumber],
     ['Năm Thần Số', personalYearNumber],
     ['Nợ Bài Học', lessonDebt],
-    ['Nợ Nghiệp', karmicDebtNumbers],
   ];
 
   // Hiển thị kết quả vào bảng
