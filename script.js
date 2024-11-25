@@ -162,6 +162,7 @@ function getBalanceNumber(name) {
 
 // Function to get the core strength number
 function getCoreStrengthNumber(name) {
+  // Đếm số lần xuất hiện của từng chữ cái
   const counts = [...name.toUpperCase()].reduce((acc, char) => {
     if (char in PYTHAGOREAN_TABLE) {
       acc[char] = (acc[char] || 0) + 1;
@@ -169,16 +170,29 @@ function getCoreStrengthNumber(name) {
     return acc;
   }, {});
 
-  const dominantLetters = Object.keys(counts).filter(
-    (char) => counts[char] >= 3
-  );
+  // Lọc ra các chữ cái có số lần xuất hiện >= 1 (giữ lại mọi chữ cái để ánh xạ sang số)
+  const dominantLetters = Object.keys(counts);
 
+  // Chuyển chữ cái thành số
   const numbers = dominantLetters.map((char) => PYTHAGOREAN_TABLE[char]);
 
-  const uniqueNumbers = [...new Set(numbers)];
+  // Đếm số lần xuất hiện của từng số
+  const numberCounts = numbers.reduce((acc, num) => {
+    acc[num] = (acc[num] || 0) + counts[dominantLetters[numbers.indexOf(num)]];
+    return acc;
+  }, {});
 
-  return uniqueNumbers.length > 0 ? uniqueNumbers.join(', ') : 'None';
+  // Lọc ra các số xuất hiện >= 3 lần
+  const uniqueNumbers = Object.keys(numberCounts)
+    .filter((num) => numberCounts[num] >= 3)
+    .map(Number);
+
+  // Trả về kết quả
+  return uniqueNumbers.length > 0 ? uniqueNumbers.join(", ") : "None";
 }
+
+
+
 
 // Function to get the personal year number
 function getPersonalYearNumber(day, month, year) {
@@ -256,7 +270,7 @@ function calculateNumerology() {
   ).innerText = `Mong Muốn Ban Đầu: ${destinyNumber}`;
   document.getElementById(
     'balanceNumber'
-  ).innerText = `Số Cân Bằng: ${balanceNumber}`;
+  ).innerText = `Cân Bằng Tâm Lý: ${balanceNumber}`;
   document.getElementById(
     'coreStrengthNumber'
   ).innerText = `Năng Lượng Thành Phần Nổi Trội: ${coreStrengthNumber}`;
@@ -352,7 +366,8 @@ function calculateNumerology() {
     ['Thái Độ Bên Ngoài', attitudeNumber],
     ['Phản Ứng Ban Đầu', personalityNumber],
     ['Mong Muốn Ban Đầu', destinyNumber],
-    ['Số Cân Bằng', balanceNumber],
+    ['Cân Bằng Tâm Lý', balanceNumber],
+    ['Chỉ Số Phát Triển', personalityNumber],
     ['Năng Lượng Thành Phần Nổi Trội', coreStrengthNumber],
     ['Năm Thần Số', personalYearNumber],
     ['Nợ Bài Học', lessonDebt],
