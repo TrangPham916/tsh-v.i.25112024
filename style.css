@@ -8,15 +8,25 @@ body {
   text-align: center;
 }
 
+html{
+  font-size: 62.5%;
+}
+
 /* Định dạng cho phần container */
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
+  position: relative;
+  margin: auto;
+  width: 100vw;
+  max-width: 500px; /* Đặt giới hạn chiều rộng */
+  padding: 10px;
+  /* background: white; Nền trắng cho nội dung */
+
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Căn giữa nội dung text */
+  z-index: 1; /* Nội dung nổi lên trên background */
 }
+
 
 /* Định dạng cho logo */
 .logo {
@@ -70,12 +80,13 @@ button:hover {
 
 /* Định dạng cho bảng kết quả */
 .results {
-  width: 70%;
+  width: 90%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-size: 16px;
-  margin: 20px auto;
+  font-size: 1.12em;
+  margin: 10px auto;
 }
+
 
 .results th,
 .results td {
@@ -128,4 +139,10 @@ button:hover {
 }
 .contact-messenger {
   background-color: #00B2FF;
+}
+
+/* Google form */
+#google-form {
+  display: none; /* Ẩn Google Form ban đầu */
+  margin-top: 20px;
 }
