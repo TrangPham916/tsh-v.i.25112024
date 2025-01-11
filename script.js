@@ -383,3 +383,12 @@ function calculateNumerology() {
     resultsTableBody.appendChild(row);
   });
 }
+// Lấy nút và iframe
+const showFormButton = document.getElementById('show-form');
+const googleForm = document.getElementById('google-form');
+
+// Gắn sự kiện click
+showFormButton.addEventListener('click', () => {
+    googleForm.style.display = 'block'; // Hiển thị Google Form
+    showFormButton.style.display = 'none'; // Ẩn nút sau khi bấm
+});
