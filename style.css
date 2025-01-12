@@ -66,16 +66,16 @@ button {
   text-align: center;
   margin: auto;
   padding: 10px;
-  background-color: #6eaadb;
+  background-color: #e683b3;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #266ca5;
+  background-color: #c1377a;
 }
 
 /* Định dạng cho bảng kết quả */
@@ -83,7 +83,7 @@ button:hover {
   width: 90%;
   border-collapse: collapse;
   margin-top: 20px;
-  font-size: 1.12em;
+  font-size: 1.4em;
   margin: 10px auto;
 }
 
